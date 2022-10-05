@@ -1,0 +1,6 @@
+### Post an user
+POST /api/auth/login
+Host: localhost:8888
+Content-Type: application/json
+
+{"email": "ejemplo@ejemplo.com", "password":"ejemplo"}

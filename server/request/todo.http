@@ -1,0 +1,14 @@
+### Get all todos
+GET /api/todos
+Host: localhost:8888
+
+### Post an todo
+POST /api/todos
+Host: localhost:8888
+Content-Type: application/json
+
+{"title":"titulo", "text": "texto", "password":"ejemplo"}
+
+### Delete an todo
+DELETE /api/todos/633d6f3821e5aa97d453fa33
+Host: localhost:8888

@@ -1,0 +1,14 @@
+### Get all users
+GET /api/users
+Host: localhost:8888
+
+### Post an user
+POST /api/users
+Host: localhost:8888
+Content-Type: application/json
+
+{"name":"ejemplo", "email": "ejemplo@ejemplo.com", "password":"ejemplo"}
+
+### Delete an user
+DELETE /api/users/633d6ff719a2d9dd194170e1
+Host: localhost:8888
