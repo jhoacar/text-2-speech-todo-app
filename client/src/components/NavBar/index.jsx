@@ -24,7 +24,7 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            ToDo App
           </Typography>
           <ButtonGroup sx={{ gap: '1rem' }}>
             <Link to="/login">
