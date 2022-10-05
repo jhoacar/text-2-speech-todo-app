@@ -1,5 +1,11 @@
+import Layout from '../../layout';
+
 function ToDos() {
-  return (<div>ToDos</div>);
+  return (
+    <Layout>
+      ToDos
+    </Layout>
+  );
 }
 
 export default ToDos;

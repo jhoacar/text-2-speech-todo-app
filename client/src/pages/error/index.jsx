@@ -1,5 +1,11 @@
+import Layout from '../../layout';
+
 function Error() {
-  return (<div>Error</div>);
+  return (
+    <Layout>
+      Error
+    </Layout>
+  );
 }
 
 export default Error;
