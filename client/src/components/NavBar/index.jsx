@@ -13,19 +13,23 @@ export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ padding: '1rem' }} position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            ToDo App
-          </Typography>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Link to="/">
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Button>ToDo App</Button>
+              </Typography>
+            </Link>
+          </Box>
           <ButtonGroup sx={{ gap: '1rem' }}>
             <Link to="/login">
               <Button color="info">Login</Button>
