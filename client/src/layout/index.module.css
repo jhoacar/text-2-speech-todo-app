@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+
+.main{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.article{
+    height: 100%;
+}
+
+.footer{
+    margin-top: auto;
+}
