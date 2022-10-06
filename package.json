@@ -1,0 +1,29 @@
+{
+  "name": "txt2speech-todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhoacar/txt2speech-todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhoacar/txt2speech-todo-app/issues"
+  },
+  "homepage": "https://github.com/jhoacar/txt2speech-todo-app#readme",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
