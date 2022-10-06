@@ -1,7 +1,16 @@
-import { Box, Paper, Typography } from '@mui/material';
+import {
+  CreateOutlined, DeleteOutlineOutlined, LockOutlined, ReadMoreOutlined, UpdateOutlined,
+} from '@mui/icons-material';
+import {
+  Box, List, ListItem, Paper, Typography,
+} from '@mui/material';
+import { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/auth';
 import Layout from '../../layout';
 
 function Home() {
+  const [isLoggedIn] = useContext(AuthContext);
   return (
     <Layout>
       <Box
@@ -26,9 +35,47 @@ function Home() {
             width: '100%',
           }}
         >
-          <Typography>
-            Hola Mundo
-          </Typography>
+
+          {isLoggedIn && <Box><Navigate to="/todos" /></Box>}
+          {!isLoggedIn && (
+            <Box>
+              <Typography variant="h4" textAlign="center">
+                You need login for
+                {' '}
+                <LockOutlined />
+              </Typography>
+              <List>
+                <ListItem>
+                  <Typography variant="h5" textAlign="center" width="100%">
+                    <ReadMoreOutlined />
+                    {' '}
+                    Read a ToDo
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography variant="h5" textAlign="center" width="100%">
+                    <CreateOutlined />
+                    {' '}
+                    Create a ToDo
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography variant="h5" textAlign="center" width="100%">
+                    <UpdateOutlined />
+                    {' '}
+                    Update a ToDo
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography variant="h5" textAlign="center" width="100%">
+                    <DeleteOutlineOutlined />
+                    {' '}
+                    Delete a ToDo
+                  </Typography>
+                </ListItem>
+              </List>
+            </Box>
+          )}
         </Paper>
       </Box>
     </Layout>

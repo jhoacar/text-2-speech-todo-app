@@ -42,7 +42,7 @@ function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <Link className={styles['nav-link']} to="/">
               ToDo App
             </Link>

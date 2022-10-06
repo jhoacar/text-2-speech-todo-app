@@ -32,7 +32,7 @@ function Login() {
         setToken(result);
       })
       .catch((error) => {
-        toast(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -57,7 +57,7 @@ function Login() {
               <Avatar><LockOutlined /></Avatar>
               <h2>Log In</h2>
             </Grid>
-            <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Email" placeholder="Enter email" variant="outlined" fullWidth required />
+            <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Email" placeholder="Enter email" type="email" variant="outlined" fullWidth required />
             <TextField value={password} onChange={(event) => setPassword(event.target.value)} label="Password" placeholder="Enter password" type="password" variant="outlined" fullWidth required />
             <FormControlLabel
               control={(
