@@ -1,19 +1,28 @@
-import { BottomNavigation, Typography } from '@mui/material';
+import {
+  AppBar, Box, Typography,
+} from '@mui/material';
 
 function Footer() {
   return (
-    <BottomNavigation sx={{
-      padding: '1rem',
+    <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
     }}
     >
-      <Typography color="InfoText" textAlign="center">
-        Todo App using React using Authorization with Express Server
-      </Typography>
-    </BottomNavigation>
+      <AppBar
+        sx={{
+          padding: '1rem',
+          position: 'static',
+          textAlign: 'center',
+        }}
+      >
+        <Typography variant="h6" component="h4" textAlign="center">
+          Todo App based in React using Authorization with Express Server
+        </Typography>
+      </AppBar>
+    </Box>
   );
 }
 

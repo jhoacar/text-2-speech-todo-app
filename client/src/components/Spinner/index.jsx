@@ -1,14 +1,10 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 
 export function Spinner() {
-  const isDarkTheme = true;
-  const background = isDarkTheme ? 'text.disabled' : 'text.primary';
-
   return (
     <Box
       sx={{
         display: 'flex',
-        bgcolor: background,
         justifyContent: 'center',
         alignItems: 'center',
         gap: '1rem',
