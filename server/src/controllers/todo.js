@@ -63,3 +63,25 @@ module.exports.delete = async (req, res) => {
       });
   }
 };
+
+module.exports.update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await Todo.updateOne({ _id: id }, req.body);
+
+    return res.status(200)
+      .send({
+        message: 'Todo udpated succesfully',
+        body: {
+          result,
+        },
+      });
+  } catch (error) {
+    console.log(error);
+
+    return res.status(500)
+      .send({
+        errors: [{ message: error.message }],
+      });
+  }
+};
