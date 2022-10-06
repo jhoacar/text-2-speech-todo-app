@@ -16,7 +16,6 @@ function Home() {
       <Box
         sx={{
           display: 'flex',
-          alignContent: 'center',
           justifyContent: 'center',
           width: '100%',
           height: '90%',
@@ -33,6 +32,7 @@ function Home() {
             margin: '1rem',
             maxWidth: '40rem',
             width: '100%',
+            height: '100%',
           }}
         >
 
@@ -49,28 +49,28 @@ function Home() {
                   <Typography variant="h5" textAlign="center" width="100%">
                     <ReadMoreOutlined />
                     {' '}
-                    Read a ToDo
+                    Read a To-Do
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography variant="h5" textAlign="center" width="100%">
                     <CreateOutlined />
                     {' '}
-                    Create a ToDo
+                    Create a To-Do
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography variant="h5" textAlign="center" width="100%">
                     <UpdateOutlined />
                     {' '}
-                    Update a ToDo
+                    Update a To-Do
                   </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography variant="h5" textAlign="center" width="100%">
                     <DeleteOutlineOutlined />
                     {' '}
-                    Delete a ToDo
+                    Delete a To-Do
                   </Typography>
                 </ListItem>
               </List>

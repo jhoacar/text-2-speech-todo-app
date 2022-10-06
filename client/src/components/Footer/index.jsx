@@ -20,7 +20,7 @@ function Footer() {
       >
         <Typography variant="h6" component="h4" textAlign="center">
           <Link sx={{ color: 'white' }} href="https://github.com/jhoacar/txt2speech-todo-app">
-            ToDo App based in React
+            To-Do App based in React
           </Link>
         </Typography>
       </AppBar>

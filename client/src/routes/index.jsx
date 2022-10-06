@@ -16,23 +16,19 @@ export function Router() {
       element: <Home />,
     },
     {
-      path: 'login',
+      path: '/login',
       element: <Login />,
     },
     {
-      path: 'login',
+      path: '/register',
       element: <Register />,
     },
     {
-      path: 'register',
-      element: <Register />,
-    },
-    {
-      path: 'todos',
+      path: '/todos',
       element: <AuthMiddleware><ToDos /></AuthMiddleware>,
     },
     {
-      path: 'todos/:id',
+      path: '/todos/:id',
       element: <AuthMiddleware><ToDo /></AuthMiddleware>,
     },
     {

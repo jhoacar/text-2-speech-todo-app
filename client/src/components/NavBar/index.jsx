@@ -44,7 +44,7 @@ function NavBar() {
           </IconButton>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <Link className={styles['nav-link']} to="/">
-              ToDo App
+              To-Do App
             </Link>
           </Typography>
           <Button
