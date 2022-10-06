@@ -1,6 +1,9 @@
 const { Router } = require('express');
 
-const { create: createMiddleware } = require('../../middlewares/todo');
+const {
+  create: createMiddleware,
+} = require('../../middlewares/todo');
+
 const {
   create: createController,
   index: getController,
@@ -8,11 +11,13 @@ const {
   update: updateController,
 } = require('../../controllers/todo');
 
+const { auth: authMiddleware } = require('../../middlewares/auth');
+
 const router = Router();
 
-router.get('/', getController);
-router.post('/', createMiddleware, createController);
-router.put('/:id', updateController);
-router.delete('/:id', deleteController);
+router.get('/', authMiddleware, getController);
+router.post('/', authMiddleware, createMiddleware, createController);
+router.put('/:id', authMiddleware, updateController);
+router.delete('/:id', authMiddleware, deleteController);
 
 module.exports = router;
