@@ -12,7 +12,12 @@ function Layout({ children }) {
       </header>
       <article className={styles.article}>
         <Card sx={{ width: '100%', height: '100%', borderRadius: 'unset' }}>
-          <CardContent sx={{ padding: '1rem' }}>
+          <CardContent sx={{
+            padding: '1rem',
+            margin: '0rem',
+            height: '100%',
+          }}
+          >
             {children}
           </CardContent>
         </Card>
