@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
+import AuthMiddleware from '../middlewares/auth';
 
 const Home = lazy(() => import('../pages/home'));
 const Login = lazy(() => import('../pages/login'));
@@ -28,11 +29,11 @@ export function Router() {
     },
     {
       path: 'todos',
-      element: <ToDos />,
+      element: <AuthMiddleware><ToDos /></AuthMiddleware>,
     },
     {
       path: 'todos/:id',
-      element: <ToDo />,
+      element: <AuthMiddleware><ToDo /></AuthMiddleware>,
     },
     {
       path: '*',
