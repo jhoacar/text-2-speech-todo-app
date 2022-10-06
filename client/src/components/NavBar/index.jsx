@@ -15,6 +15,7 @@ import { ThemeContext } from '../../contexts/theme';
 import { removeToken } from '../../utils/handleToken';
 
 import styles from './index.module.css';
+import { setTheme } from '../../utils/handleTheme';
 
 function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useContext(AuthContext);
@@ -27,12 +28,13 @@ function NavBar() {
 
   const handleChangeTheme = () => {
     setIsDarkTheme(!isDarkTheme);
+    setTheme(isDarkTheme ? 'ligth' : 'dark');
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ gap: '2rem' }}>
           <IconButton
             size="large"
             edge="start"
@@ -67,13 +69,13 @@ function NavBar() {
 
             !isLoggedIn && (
               <>
-                <Link className={styles['nav-link']} to="/login">
-                  <Button color="inherit">
+                <Link to="/login">
+                  <Button variant="outlined" sx={{ color: 'white' }}>
                     Login
                   </Button>
                 </Link>
-                <Link className={styles['nav-link']} to="/register">
-                  <Button color="inherit">
+                <Link to="/register">
+                  <Button variant="outlined" sx={{ color: 'white' }}>
                     Register
                   </Button>
                 </Link>
@@ -84,12 +86,12 @@ function NavBar() {
           {
             isLoggedIn && (
               <>
-                <Link className={styles['nav-link']} to="/todos">
-                  <Button color="inherit">
+                <Link to="/todos">
+                  <Button variant="outlined" sx={{ color: 'white' }}>
                     To-Do&apos;s
                   </Button>
                 </Link>
-                <Button onClick={handleLogout} color="inherit">
+                <Button variant="outlined" sx={{ color: 'white' }} onClick={handleLogout}>
                   Logout
                 </Button>
               </>

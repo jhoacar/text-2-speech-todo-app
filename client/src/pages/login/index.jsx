@@ -85,19 +85,12 @@ function Login() {
               label="Remember me"
             />
             <Button type="submit" color="primary" variant="contained" fullWidth>Log In</Button>
-            <Typography>
-
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <Link to="#">
-                <Button type="link">Forgot password ?</Button>
-              </Link>
-            </Typography>
             <Typography variant="h6">
               {' '}
               Do you have an account ?
               {' '}
               <Link to="/register">
-                <Button type="link">Register</Button>
+                <Button variant="outlined" size="large" type="link">Go to register</Button>
               </Link>
             </Typography>
           </Paper>

@@ -77,7 +77,7 @@ function Register() {
               Already registered ?
               {' '}
               <Link to="/login">
-                <Button type="link">Log In</Button>
+                <Button variant="outlined" size="large" type="link">Go to login</Button>
               </Link>
             </Typography>
           </Paper>

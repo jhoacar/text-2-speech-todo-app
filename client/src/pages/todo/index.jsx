@@ -57,7 +57,7 @@ function ToDos() {
             </Box>
             <ButtonGroup>
               <Link color="white" to="/todos/create">
-                <Button color="inherit">
+                <Button size="large" color="success">
                   Create To-Do
                 </Button>
               </Link>
