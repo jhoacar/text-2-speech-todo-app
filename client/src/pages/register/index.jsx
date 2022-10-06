@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import {
   SupervisedUserCircleRounded,
 } from '@mui/icons-material';
@@ -9,6 +10,11 @@ import toast from 'react-hot-toast';
 import { Link, Navigate } from 'react-router-dom';
 import Layout from '../../layout';
 import { handleRegister } from '../../services/register';
+
+const Form = styled.form`
+  width: 100%;
+  height: 100%;
+`;
 
 function Register() {
   // const isLoggedIn = false;
@@ -35,17 +41,27 @@ function Register() {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit}>
-        <Box alignContent="center" justifyContent="center" display="flex" width="100%">
+      <Form onSubmit={handleSubmit}>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          height: '90%',
+        }}
+        >
           <Paper
             elevation={10}
             sx={{
               display: 'flex',
               flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
               gap: '2rem',
+              margin: '1rem',
               padding: '2rem',
-              width: '100%',
               maxWidth: '40rem',
+              width: '100%',
+              height: '90%',
             }}
           >
             <Grid align="center" padding="1rem">
@@ -56,7 +72,7 @@ function Register() {
             <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Email" placeholder="Enter email" type="email" variant="outlined" fullWidth required />
             <TextField value={password} onChange={(event) => setPassword(event.target.value)} label="Password" placeholder="Enter password" type="password" variant="outlined" fullWidth required />
             <Button type="submit" color="primary" variant="contained" fullWidth>Register</Button>
-            <Typography>
+            <Typography variant="h6">
               {' '}
               Already registered ?
               {' '}
@@ -66,7 +82,7 @@ function Register() {
             </Typography>
           </Paper>
         </Box>
-      </form>
+      </Form>
     </Layout>
   );
 }

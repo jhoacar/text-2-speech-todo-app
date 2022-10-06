@@ -84,9 +84,9 @@ function NavBar() {
           {
             isLoggedIn && (
               <>
-                <Link className={styles['nav-link']} to="/dashboard">
+                <Link className={styles['nav-link']} to="/todos">
                   <Button color="inherit">
-                    Dashboard
+                    To-Do&apos;s
                   </Button>
                 </Link>
                 <Button onClick={handleLogout} color="inherit">

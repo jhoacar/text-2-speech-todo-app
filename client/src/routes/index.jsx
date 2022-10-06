@@ -5,8 +5,12 @@ import AuthMiddleware from '../middlewares/auth';
 const Home = lazy(() => import('../pages/home'));
 const Login = lazy(() => import('../pages/login'));
 const Register = lazy(() => import('../pages/register'));
-const ToDos = lazy(() => import('../pages/todo/ToDos'));
-const ToDo = lazy(() => import('../pages/todo/ToDo'));
+
+const AllToDos = lazy(() => import('../pages/todo'));
+const CreateToDo = lazy(() => import('../pages/todo/create'));
+const ShowToDo = lazy(() => import('../pages/todo/show'));
+const EditToDo = lazy(() => import('../pages/todo/edit'));
+
 const Error = lazy(() => import('../pages/error'));
 
 export function Router() {
@@ -25,11 +29,19 @@ export function Router() {
     },
     {
       path: '/todos',
-      element: <AuthMiddleware><ToDos /></AuthMiddleware>,
+      element: <AuthMiddleware><AllToDos /></AuthMiddleware>,
     },
     {
-      path: '/todos/:id',
-      element: <AuthMiddleware><ToDo /></AuthMiddleware>,
+      path: '/todos/create',
+      element: <AuthMiddleware><CreateToDo /></AuthMiddleware>,
+    },
+    {
+      path: '/todos/show/:id',
+      element: <AuthMiddleware><ShowToDo /></AuthMiddleware>,
+    },
+    {
+      path: '/todos/update/:id',
+      element: <AuthMiddleware><EditToDo /></AuthMiddleware>,
     },
     {
       path: '*',

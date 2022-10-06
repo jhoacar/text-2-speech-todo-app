@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { LockOutlined } from '@mui/icons-material';
 import {
   Avatar,
@@ -17,6 +18,11 @@ import { AuthContext } from '../../contexts/auth';
 import Layout from '../../layout';
 import { handleLogin } from '../../services/auth';
 import { setToken } from '../../utils/handleToken';
+
+const Form = styled.form`
+  width: 100%;
+  height: 100%;
+`;
 
 function Login() {
   // const isLoggedIn = false;
@@ -40,17 +46,27 @@ function Login() {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit}>
-        <Box alignContent="center" justifyContent="center" display="flex" width="100%">
+      <Form onSubmit={handleSubmit}>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          height: '90%',
+        }}
+        >
           <Paper
             elevation={10}
             sx={{
               display: 'flex',
               flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
               gap: '2rem',
+              margin: '1rem',
               padding: '2rem',
-              width: '100%',
               maxWidth: '40rem',
+              width: '100%',
+              height: '90%',
             }}
           >
             <Grid align="center" padding="1rem">
@@ -76,7 +92,7 @@ function Login() {
                 <Button type="link">Forgot password ?</Button>
               </Link>
             </Typography>
-            <Typography>
+            <Typography variant="h6">
               {' '}
               Do you have an account ?
               {' '}
@@ -86,7 +102,7 @@ function Login() {
             </Typography>
           </Paper>
         </Box>
-      </form>
+      </Form>
     </Layout>
   );
 }

@@ -1,8 +1,9 @@
 import { ListOutlined } from '@mui/icons-material';
 import {
-  Box, List, ListItem, Paper, Typography,
+  Box, Button, ButtonGroup, List, ListItem, Paper, Typography,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../../layout';
 
 function ToDos() {
@@ -38,19 +39,29 @@ function ToDos() {
         >
           <Typography
             variant="h4"
+            component="div"
             sx={{
               textAlign: 'center',
               padding: '2rem',
               display: 'flex',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
               alignItems: 'center',
               gap: '1rem',
             }}
           >
-            <ListOutlined fontSize="2rem" />
-            <span>
-              To-Do&apos;s
-            </span>
+            <Box sx={{ display: 'flex', gap: '1rem' }}>
+              <ListOutlined fontSize="100rem" />
+              <span>
+                To-Do&apos;s
+              </span>
+            </Box>
+            <ButtonGroup>
+              <Link color="white" to="/todos/create">
+                <Button color="inherit">
+                  Create To-Do
+                </Button>
+              </Link>
+            </ButtonGroup>
           </Typography>
           { todos.length > 0
           && (
@@ -80,9 +91,13 @@ function ToDos() {
                   variant="h5"
                   sx={{
                     textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                   }}
                 >
-                  You don&apos;t have any To-Do&apos;s
+                  You don&apos;t have any To-Do
                 </Typography>
               </Paper>
             )
