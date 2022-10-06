@@ -7,6 +7,7 @@ const {
 const {
   create: createController,
   index: getController,
+  show: showController,
   delete: deleteController,
   update: updateController,
 } = require('../../controllers/todo');
@@ -17,6 +18,7 @@ const router = Router();
 
 router.get('/', authMiddleware, getController);
 router.post('/', authMiddleware, createMiddleware, createController);
+router.get('/:id', authMiddleware, showController);
 router.put('/:id', authMiddleware, updateController);
 router.delete('/:id', authMiddleware, deleteController);
 

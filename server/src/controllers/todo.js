@@ -23,13 +23,35 @@ module.exports.create = async (req, res) => {
 
 module.exports.index = async (req, res) => {
   try {
-    const todos = await Todo.find().lean();
+    const todos = await Todo.find().populate('user').lean();
 
     return res.status(200)
       .send({
         message: "All ToDo's registered",
         body: {
           todos,
+        },
+      });
+  } catch (error) {
+    console.log(error);
+
+    return res.status(500)
+      .send({
+        errors: [{ message: error.message }],
+      });
+  }
+};
+
+module.exports.show = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const todo = await Todo.findOne({ _id: id }).populate('user').lean();
+
+    return res.status(200)
+      .send({
+        message: "All ToDo's registered",
+        body: {
+          todo,
         },
       });
   } catch (error) {

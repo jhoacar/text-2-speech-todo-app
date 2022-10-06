@@ -10,5 +10,5 @@ Content-Type: application/json
 {"name":"ejemplo", "email": "ejemplo@ejemplo.com", "password":"ejemplo"}
 
 ### Delete an user
-DELETE /api/users/633d6ff719a2d9dd194170e1
+DELETE /api/users/633e4f1fbeea226ec30a1d99
 Host: localhost:8888
