@@ -1,8 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 const Todo = require('../models/todo');
 
 module.exports.create = async (req, res) => {
   try {
-    const todo = (await Todo.create(req.body)).toObject();
+    const { user } = req;
+    const todo = (await Todo.create({ ...req.body, user: user?._id })).toObject();
 
     return res.status(200)
       .send({
@@ -23,7 +25,8 @@ module.exports.create = async (req, res) => {
 
 module.exports.index = async (req, res) => {
   try {
-    const todos = await Todo.find().populate('user').lean();
+    const { user } = req;
+    const todos = await Todo.find({ user: user?._id }).populate('user').lean();
 
     return res.status(200)
       .send({
@@ -45,7 +48,8 @@ module.exports.index = async (req, res) => {
 module.exports.show = async (req, res) => {
   try {
     const { id } = req.params;
-    const todo = await Todo.findOne({ _id: id }).populate('user').lean();
+    const { user } = req;
+    const todo = await Todo.findOne({ _id: id, user: user?._id }).populate('user').lean();
 
     return res.status(200)
       .send({
@@ -67,7 +71,8 @@ module.exports.show = async (req, res) => {
 module.exports.delete = async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await Todo.deleteOne({ _id: id });
+    const { user } = req;
+    const result = await Todo.deleteOne({ _id: id, user: user?._id });
 
     return res.status(200)
       .send({
@@ -89,7 +94,8 @@ module.exports.delete = async (req, res) => {
 module.exports.update = async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await Todo.updateOne({ _id: id }, req.body);
+    const { user } = req;
+    const result = await Todo.updateOne({ _id: id, user: user?._id }, req.body);
 
     return res.status(200)
       .send({

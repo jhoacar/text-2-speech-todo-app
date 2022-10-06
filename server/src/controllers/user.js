@@ -29,7 +29,7 @@ module.exports.create = async (req, res) => {
 
 module.exports.index = async (req, res) => {
   try {
-    const users = await User.find().lean();
+    const users = await User.find().populate('todos').lean();
 
     return res.status(200)
       .send({
