@@ -40,7 +40,7 @@ export function Router() {
       element: <AuthMiddleware><ShowToDo /></AuthMiddleware>,
     },
     {
-      path: '/todos/update/:id',
+      path: '/todos/edit/:id',
       element: <AuthMiddleware><EditToDo /></AuthMiddleware>,
     },
     {

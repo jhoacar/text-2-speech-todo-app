@@ -1,3 +1,5 @@
+import { getToDos } from './todo';
+
 const SERVER_API = import.meta.env.VITE_SERVER_API;
 
 const AUTH_LOGIN = `${SERVER_API}/auth/login`;
@@ -34,4 +36,16 @@ export async function handleLogin(credentials) {
   }
 
   return body.token;
+}
+
+/**
+ * This function validate the token saved in localStorage
+ */
+export async function validateToken() {
+  const result = await getToDos();
+  if (result.errors) {
+    return false;
+  }
+
+  return true;
 }

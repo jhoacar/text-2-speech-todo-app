@@ -34,7 +34,7 @@ function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ gap: '2rem' }}>
+        <Toolbar sx={{ gap: '1rem' }}>
           <IconButton
             size="large"
             edge="start"
@@ -44,9 +44,9 @@ function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+          <Typography component="div" sx={{ flexGrow: 1 }}>
             <Link className={styles['nav-link']} to="/">
-              To-Do App
+              ToDo App
             </Link>
           </Typography>
           <Button
@@ -57,11 +57,11 @@ function NavBar() {
           >
             {
               isDarkTheme
-              && <LightModeIcon />
+              && <LightModeIcon sx={{ width: '1rem', heigth: '1rem' }} />
             }
             {
               !isDarkTheme
-              && <DarkModeIcon />
+              && <DarkModeIcon sx={{ width: '1rem', heigth: '1rem' }} />
             }
           </Button>
 
@@ -70,12 +70,12 @@ function NavBar() {
             !isLoggedIn && (
               <>
                 <Link to="/login">
-                  <Button variant="outlined" sx={{ color: 'white' }}>
+                  <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }}>
                     Login
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button variant="outlined" sx={{ color: 'white' }}>
+                  <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }}>
                     Register
                   </Button>
                 </Link>
@@ -87,11 +87,11 @@ function NavBar() {
             isLoggedIn && (
               <>
                 <Link to="/todos">
-                  <Button variant="outlined" sx={{ color: 'white' }}>
-                    To-Do&apos;s
+                  <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }}>
+                    ToDo&apos;s
                   </Button>
                 </Link>
-                <Button variant="outlined" sx={{ color: 'white' }} onClick={handleLogout}>
+                <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }} onClick={handleLogout}>
                   Logout
                 </Button>
               </>
