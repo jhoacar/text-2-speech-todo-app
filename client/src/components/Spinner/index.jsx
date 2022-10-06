@@ -15,7 +15,7 @@ export function Spinner() {
         height: '100%',
       }}
     >
-      <CircularProgress color="success" />
+      <CircularProgress color="info" />
       <Typography>
         Loading
       </Typography>

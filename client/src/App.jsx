@@ -10,7 +10,6 @@ import { getToken } from './utils/handleToken';
 import { getTheme } from './utils/handleTheme';
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
   const [isDarkMode, setIsDarkMode] = useState(getTheme() === 'dark');
   const [isLoggedIn, setIsLoggedIn] = useState(getToken()?.length > 0);
   const theme = createTheme({

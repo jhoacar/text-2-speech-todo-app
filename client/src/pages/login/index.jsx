@@ -10,18 +10,34 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Link, Navigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/auth';
 import Layout from '../../layout';
+import { handleLogin } from '../../services/auth';
+import { setToken } from '../../utils/handleToken';
 
 function Login() {
   // const isLoggedIn = false;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleLogin({ email, password })
+      .then((result) => {
+        setIsLoggedIn(true);
+        setToken(result);
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
   };
+
+  if (isLoggedIn) return <Navigate to="/" />;
+
   return (
     <Layout>
       <form onSubmit={handleSubmit}>

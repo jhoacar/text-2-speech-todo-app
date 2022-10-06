@@ -1,4 +1,4 @@
-const SERVER_API = process.env.VITE_SERVER_API;
+const SERVER_API = import.meta.env.VITE_SERVER_API;
 
 const AUTH_LOGIN = `${SERVER_API}/auth/login`;
 

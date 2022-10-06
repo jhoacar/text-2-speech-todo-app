@@ -1,5 +1,5 @@
 import {
-  AppBar, Box, Typography,
+  AppBar, Box, Link, Typography,
 } from '@mui/material';
 
 function Footer() {
@@ -19,7 +19,9 @@ function Footer() {
         }}
       >
         <Typography variant="h6" component="h4" textAlign="center">
-          Todo App based in React using Authorization with Express Server
+          <Link sx={{ color: 'white' }} href="https://github.com/jhoacar/txt2speech-todo-app">
+            Todo App based in React
+          </Link>
         </Typography>
       </AppBar>
     </Box>
