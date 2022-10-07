@@ -31,7 +31,7 @@ import { getToDos, removeToDo } from '../../services/todo';
 
 function ToDos() {
   // eslint-disable-next-line no-unused-vars
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(null);
   const [reload, setReload] = useState(0);
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -138,7 +138,7 @@ function ToDos() {
                   padding: '1rem',
                 }}
               >
-                {todos.length > 0
+                {todos?.length > 0
               && (
                 <List>
                   {todos?.map((todo) => (
@@ -226,7 +226,7 @@ function ToDos() {
                 </List>
               )}
                 {
-              todos.length <= 0 && (
+              todos?.length <= 0 && (
 
                 <Typography
                   variant="h5"
@@ -243,6 +243,22 @@ function ToDos() {
 
               )
             }
+                {todos === null && (
+
+                <Typography
+                  variant="h5"
+                  sx={{
+                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  Loading
+                </Typography>
+
+                )}
               </CardContent>
             </Card>
           </Paper>
