@@ -1,5 +1,5 @@
 import { ErrorOutline } from '@mui/icons-material';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Layout from '../../layout';
 
 function Error() {
@@ -14,7 +14,7 @@ function Error() {
           height: '90%',
         }}
       >
-        <Paper
+        <Box
           elevation={10}
           sx={{
             display: 'flex',
@@ -32,7 +32,7 @@ function Error() {
             {' '}
             404 - Not Found
           </Typography>
-        </Paper>
+        </Box>
       </Box>
     </Layout>
   );

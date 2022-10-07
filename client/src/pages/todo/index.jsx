@@ -58,27 +58,22 @@ function ToDos() {
       <Box
         sx={{
           width: '100%',
-          height: '90%',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
         }}
       >
-        <Paper
-          elevation={10}
+        <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: '2rem',
-            margin: '1rem',
-            padding: '1rem',
-            maxWidth: '40rem',
-            width: '100%',
+            // width: '100%',
+            width: '50rem',
             height: '100%',
           }}
         >
-          <Typography
-            variant="h6"
-            component="div"
+          <Box
             sx={{
               textAlign: 'center',
               padding: '2rem',
@@ -101,40 +96,66 @@ function ToDos() {
                 </Button>
               </Link>
             </ButtonGroup>
-          </Typography>
-          <Card>
-            <CardContent
+          </Box>
+          <Paper
+            elevation={20}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2rem',
+              height: '100%',
+              margin: '2rem',
+            }}
+          >
+            <Card
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2rem',
                 margin: '1rem',
                 padding: '1rem',
-                maxWidth: '40rem',
                 height: '100%',
               }}
             >
-              {todos.length > 0
+              <CardContent
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  gap: '2rem',
+                  padding: '1rem',
+                }}
+              >
+                {todos.length > 0
               && (
                 <List>
                   {todos?.map((todo) => (
                     <ListItem
                       key={todo?.title}
-                      sx={{ display: 'flex', justifyContent: 'space-between' }}
+                      sx={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}
                     >
                       <Typography variant="h6" textTransform="capitalize">
                         {todo.title}
                       </Typography>
                       <ButtonGroup sx={{ gap: '.5rem' }}>
                         <Link to={`/todos/show/${todo._id}`}>
-                          <Button size="small"><Visibility /></Button>
+                          <Button
+                            size="small"
+                            title="Show"
+                          >
+                            <Visibility />
+                          </Button>
                         </Link>
                         <Link to={`/todos/edit/${todo._id}`}>
-                          <Button size="small"><Edit /></Button>
+                          <Button
+                            size="small"
+                            color="warning"
+                            title="Edit"
+                          >
+                            <Edit />
+                          </Button>
                         </Link>
                         <Button
                           size="small"
                           color="error"
+                          title="Remove"
                           onClick={() => setOpenDialog(true)}
 
                         >
@@ -174,7 +195,7 @@ function ToDos() {
                   ))}
                 </List>
               )}
-              {
+                {
               todos.length <= 0 && (
 
                 <Typography
@@ -192,9 +213,10 @@ function ToDos() {
 
               )
             }
-            </CardContent>
-          </Card>
-        </Paper>
+              </CardContent>
+            </Card>
+          </Paper>
+        </Box>
       </Box>
     </Layout>
   );

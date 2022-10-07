@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { ListAlt, ListOutlined } from '@mui/icons-material';
 import {
   Avatar,
-  Box, Button, ButtonGroup, Grid, Paper, TextField, Typography,
+  Box, Button, ButtonGroup, Card, CardContent, Grid, Paper, TextField,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
@@ -53,27 +53,22 @@ function EditToDo() {
       <Box
         sx={{
           width: '100%',
-          height: '90%',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
         }}
       >
-        <Paper
-          elevation={10}
+        <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: '2rem',
-            margin: '1rem',
-            padding: '1rem',
-            maxWidth: '40rem',
-            width: '100%',
+            // width: '100%',
+            width: '50rem',
             height: '100%',
           }}
         >
-          <Typography
-            variant="h6"
-            component="div"
+          <Box
             sx={{
               textAlign: 'center',
               padding: '2rem',
@@ -96,64 +91,56 @@ function EditToDo() {
                 </Button>
               </Link>
             </ButtonGroup>
-          </Typography>
+          </Box>
           <Paper
             elevation={20}
             sx={{
               display: 'flex',
               flexDirection: 'column',
               gap: '2rem',
-              margin: '1rem',
-              padding: '1rem',
-              maxWidth: '40rem',
               height: '100%',
+              margin: '2rem',
             }}
           >
-            <Typography
+            <Card
               sx={{
-                textAlign: 'center',
+                margin: '1rem',
+                padding: '1rem',
                 height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
               }}
             >
-              <Form onSubmit={handleSubmit}>
-                <Box sx={{
+              <CardContent
+                sx={{
                   display: 'flex',
-                  justifyContent: 'center',
-                  width: '100%',
-                  height: '90%',
+                  flexDirection: 'column',
+                  height: '100%',
+                  gap: '2rem',
+                  padding: '1rem',
                 }}
-                >
-                  <Paper
-                    elevation={10}
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      gap: '2rem',
-                      margin: '1rem',
-                      padding: '2rem',
-                      maxWidth: '40rem',
-                      width: '100%',
-                      height: '90%',
-                    }}
+              >
+                <Grid align="center" padding="1rem">
+                  <Avatar><ListAlt /></Avatar>
+                  <h2>Edit ToDo</h2>
+                </Grid>
+                <Form onSubmit={handleSubmit}>
+                  <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    gap: '2rem',
+                  }}
                   >
-                    <Grid align="center" padding="1rem">
-                      <Avatar><ListAlt /></Avatar>
-                      <h2>Edit ToDo</h2>
-                    </Grid>
                     <TextField value={toDo.title} onChange={(event) => setToDo({ ...toDo, title: event.target.value })} label="Title" placeholder="Enter title" variant="outlined" fullWidth required />
                     <TextField value={toDo.text} onChange={(event) => setToDo({ ...toDo, text: event.target.value })} label="Text" placeholder="Enter text" variant="outlined" fullWidth required />
                     <Button type="submit" color="primary" variant="contained" fullWidth>Update</Button>
-                  </Paper>
-                </Box>
-              </Form>
-            </Typography>
+                  </Box>
+                </Form>
+              </CardContent>
+            </Card>
           </Paper>
-        </Paper>
+        </Box>
       </Box>
     </Layout>
   );

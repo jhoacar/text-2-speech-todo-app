@@ -3,7 +3,12 @@ import {
   SupervisedUserCircleRounded,
 } from '@mui/icons-material';
 import {
-  Avatar, Box, Button, Grid, Paper, TextField, Typography,
+  Avatar,
+  Box,
+  Button,
+  Grid,
+  TextField,
+  Typography,
 } from '@mui/material';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -49,7 +54,7 @@ function Register() {
           height: '90%',
         }}
         >
-          <Paper
+          <Box
             elevation={10}
             sx={{
               display: 'flex',
@@ -87,7 +92,7 @@ function Register() {
                 <Button variant="outlined" size="large" type="link">Go to login</Button>
               </Link>
             </Typography>
-          </Paper>
+          </Box>
         </Box>
       </Form>
     </Layout>

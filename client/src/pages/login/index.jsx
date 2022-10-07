@@ -7,7 +7,6 @@ import {
   // Checkbox,
   // FormControlLabel,
   Grid,
-  Paper,
   TextField,
   Typography,
 } from '@mui/material';
@@ -54,7 +53,7 @@ function Login() {
           height: '90%',
         }}
         >
-          <Paper
+          <Box
             elevation={10}
             sx={{
               display: 'flex',
@@ -100,7 +99,7 @@ function Login() {
                 <Button variant="outlined" size="large" type="link">Go to register</Button>
               </Link>
             </Typography>
-          </Paper>
+          </Box>
         </Box>
       </Form>
     </Layout>

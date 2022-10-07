@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../contexts/auth';
 import { validateToken } from '../services/auth';
 import { removeToken } from '../utils/handleToken';
@@ -12,12 +13,17 @@ function Auth({ children }) {
     useEffect(() => {
       validateToken()
         .then((validated) => {
+          if (!validated) {
+            toast.error('Your session has expired');
+            removeToken();
+          }
           setIsLoggedIn(validated);
         })
         .catch((error) => {
           console.log(error);
-          setIsLoggedIn(false);
+          toast.error('Your session has expired');
           removeToken();
+          setIsLoggedIn(false);
         });
     }, []);
   }

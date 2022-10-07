@@ -1,8 +1,12 @@
 import {
-  CreateOutlined, DeleteOutlineOutlined, LockOutlined, ReadMoreOutlined, UpdateOutlined,
+  AddCircle,
+  DeleteOutlineOutlined,
+  Edit,
+  LockOutlined,
+  MenuBookOutlined,
 } from '@mui/icons-material';
 import {
-  Box, List, ListItem, Paper, Typography,
+  Box, List, ListItem, Typography,
 } from '@mui/material';
 import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
@@ -21,7 +25,7 @@ function Home() {
           height: '90%',
         }}
       >
-        <Paper
+        <Box
           elevation={10}
           sx={{
             display: 'flex',
@@ -44,39 +48,65 @@ function Home() {
                 {' '}
                 <LockOutlined />
               </Typography>
-              <List>
+              <List sx={{ padding: '1rem' }}>
                 <ListItem>
-                  <Typography variant="h5" textAlign="center" width="100%">
-                    <ReadMoreOutlined />
-                    {' '}
-                    Read a To-Do
-                  </Typography>
+                  <Box sx={{
+                    display: 'flex',
+                    gap: '1rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  >
+                    <MenuBookOutlined />
+                    <Typography variant="h5">Read a To-Do</Typography>
+                  </Box>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="h5" textAlign="center" width="100%">
-                    <CreateOutlined />
-                    {' '}
-                    Create a To-Do
-                  </Typography>
+                  <Box sx={{
+                    display: 'flex',
+                    gap: '1rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  >
+                    <AddCircle />
+                    <Typography variant="h5">
+                      Create a To-Do
+                    </Typography>
+                  </Box>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="h5" textAlign="center" width="100%">
-                    <UpdateOutlined />
-                    {' '}
-                    Update a To-Do
-                  </Typography>
+                  <Box sx={{
+                    display: 'flex',
+                    gap: '1rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  >
+                    <Edit />
+                    <Typography variant="h5">
+                      Update a To-Do
+                    </Typography>
+                  </Box>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="h5" textAlign="center" width="100%">
+                  <Box sx={{
+                    display: 'flex',
+                    gap: '1rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  >
                     <DeleteOutlineOutlined />
-                    {' '}
-                    Delete a To-Do
-                  </Typography>
+                    <Typography variant="h5">
+                      Delete a To-Do
+                    </Typography>
+                  </Box>
                 </ListItem>
               </List>
             </Box>
           )}
-        </Paper>
+        </Box>
       </Box>
     </Layout>
   );

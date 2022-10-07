@@ -40,13 +40,13 @@ function ShowToDo() {
           justifyContent: 'center',
         }}
       >
-        <Paper
-          elevation={10}
+        <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: '2rem',
-            width: '100%',
+            // width: '100%',
+            width: '50rem',
             height: '100%',
           }}
         >
@@ -115,18 +115,18 @@ function ShowToDo() {
                 }}
                 >
                   <Box sx={{ display: 'flex', gap: '1rem' }}>
-                    <Typography variant="h5" component="span">Title:</Typography>
+                    <Typography variant="h5" component="span" fontWeight="bold">Title:</Typography>
                     <Typography variant="h5" component="span">{toDo.title}</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', gap: '1rem' }}>
-                    <Typography variant="h5" component="span">Text:</Typography>
+                    <Typography variant="h5" component="span" fontWeight="bold">Text:</Typography>
                     <Typography variant="h5" component="span">{toDo.text}</Typography>
                   </Box>
                 </Box>
               </CardContent>
             </Card>
           </Paper>
-        </Paper>
+        </Box>
       </Box>
     </Layout>
   );
