@@ -10,6 +10,8 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Card,
+  CardContent,
   Dialog,
   DialogActions,
   DialogContent,
@@ -100,19 +102,19 @@ function ToDos() {
               </Link>
             </ButtonGroup>
           </Typography>
-          <Paper
-            elevation={20}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '2rem',
-              margin: '1rem',
-              padding: '1rem',
-              maxWidth: '40rem',
-              height: '100%',
-            }}
-          >
-            {todos.length > 0
+          <Card>
+            <CardContent
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2rem',
+                margin: '1rem',
+                padding: '1rem',
+                maxWidth: '40rem',
+                height: '100%',
+              }}
+            >
+              {todos.length > 0
               && (
                 <List>
                   {todos?.map((todo) => (
@@ -172,7 +174,7 @@ function ToDos() {
                   ))}
                 </List>
               )}
-            {
+              {
               todos.length <= 0 && (
 
                 <Typography
@@ -190,7 +192,8 @@ function ToDos() {
 
               )
             }
-          </Paper>
+            </CardContent>
+          </Card>
         </Paper>
       </Box>
     </Layout>

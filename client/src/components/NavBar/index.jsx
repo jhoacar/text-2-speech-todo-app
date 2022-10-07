@@ -32,9 +32,9 @@ function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar sx={{ gap: '1rem' }}>
+    <Box sx={{ flexGrow: 1, height: '100%' }}>
+      <AppBar sx={{ position: 'static', height: '100%' }}>
+        <Toolbar sx={{ gap: '1rem', height: '100%' }}>
           <IconButton
             size="large"
             edge="start"

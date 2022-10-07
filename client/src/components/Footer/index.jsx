@@ -9,6 +9,7 @@ function Footer() {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      height: '100%',
     }}
     >
       <AppBar
@@ -16,6 +17,10 @@ function Footer() {
           padding: '1rem',
           position: 'static',
           textAlign: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
         }}
       >
         <Typography variant="h6" component="h4" textAlign="center">

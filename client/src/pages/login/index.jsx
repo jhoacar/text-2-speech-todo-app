@@ -4,8 +4,8 @@ import {
   Avatar,
   Box,
   Button,
-  Checkbox,
-  FormControlLabel,
+  // Checkbox,
+  // FormControlLabel,
   Grid,
   Paper,
   TextField,
@@ -75,7 +75,7 @@ function Login() {
             </Grid>
             <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Email" placeholder="Enter email" type="email" variant="outlined" fullWidth required />
             <TextField value={password} onChange={(event) => setPassword(event.target.value)} label="Password" placeholder="Enter password" type="password" variant="outlined" fullWidth required />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={(
                 <Checkbox
                   name="checkedB"
@@ -83,12 +83,19 @@ function Login() {
                 />
             )}
               label="Remember me"
-            />
+            /> */}
             <Button type="submit" color="primary" variant="contained" fullWidth>Log In</Button>
-            <Typography variant="h6">
-              {' '}
-              Do you have an account ?
-              {' '}
+            <Typography
+              variant="h6"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '1rem',
+              }}
+            >
+              <span>You don&apos;t have an account?</span>
               <Link to="/register">
                 <Button variant="outlined" size="large" type="link">Go to register</Button>
               </Link>

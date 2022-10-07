@@ -11,9 +11,16 @@ function Layout({ children }) {
         <NavBar />
       </header>
       <article className={styles.article}>
-        <Card sx={{ width: '100%', height: '100%', borderRadius: 'unset' }}>
+        <Card sx={{
+          width: '100%',
+          height: '100%',
+          borderRadius: 'unset',
+          padding: '0rem',
+          margin: '0rem',
+        }}
+        >
           <CardContent sx={{
-            padding: '1rem',
+            padding: '0rem',
             margin: '0rem',
             height: '100%',
           }}

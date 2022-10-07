@@ -72,10 +72,17 @@ function Register() {
             <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Email" placeholder="Enter email" type="email" variant="outlined" fullWidth required />
             <TextField value={password} onChange={(event) => setPassword(event.target.value)} label="Password" placeholder="Enter password" type="password" variant="outlined" fullWidth required />
             <Button type="submit" color="primary" variant="contained" fullWidth>Register</Button>
-            <Typography variant="h6">
-              {' '}
-              Already registered ?
-              {' '}
+            <Typography
+              variant="h6"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '1rem',
+              }}
+            >
+              <span>Already registered ?</span>
               <Link to="/login">
                 <Button variant="outlined" size="large" type="link">Go to login</Button>
               </Link>

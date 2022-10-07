@@ -1,7 +1,7 @@
 import { ListAlt, ListOutlined } from '@mui/icons-material';
 import {
   Avatar,
-  Box, Button, ButtonGroup, Grid, Paper, Typography,
+  Box, Button, ButtonGroup, Card, CardContent, Grid, Paper, Typography,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 
@@ -35,7 +35,7 @@ function ShowToDo() {
       <Box
         sx={{
           width: '100%',
-          height: '90%',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
         }}
@@ -46,16 +46,11 @@ function ShowToDo() {
             display: 'flex',
             flexDirection: 'column',
             gap: '2rem',
-            margin: '1rem',
-            padding: '1rem',
-            maxWidth: '40rem',
             width: '100%',
             height: '100%',
           }}
         >
-          <Typography
-            variant="h6"
-            component="div"
+          <Box
             sx={{
               textAlign: 'center',
               padding: '2rem',
@@ -78,67 +73,58 @@ function ShowToDo() {
                 </Button>
               </Link>
             </ButtonGroup>
-          </Typography>
+          </Box>
           <Paper
             elevation={20}
             sx={{
               display: 'flex',
               flexDirection: 'column',
               gap: '2rem',
-              margin: '1rem',
-              padding: '1rem',
-              maxWidth: '40rem',
               height: '100%',
+              margin: '2rem',
             }}
           >
-            <Typography
+            <Card
               sx={{
-                textAlign: 'center',
+                margin: '1rem',
+                padding: '1rem',
                 height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
               }}
             >
-              <Box sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                width: '100%',
-                height: '90%',
-              }}
+              <CardContent
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  gap: '2rem',
+                  padding: '1rem',
+                }}
               >
-                <Paper
-                  elevation={10}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: '2rem',
-                    margin: '1rem',
-                    padding: '2rem',
-                    maxWidth: '40rem',
-                    width: '100%',
-                    height: '90%',
-                  }}
+                <Grid align="center" padding="1rem">
+                  <Avatar><ListAlt /></Avatar>
+                  <h2>Show ToDo</h2>
+                </Grid>
+                <Box sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '2rem',
+                  padding: '1rem',
+                  height: '100%',
+                }}
                 >
-                  <Grid align="center" padding="1rem">
-                    <Avatar><ListAlt /></Avatar>
-                    <h2>Show ToDo</h2>
-                  </Grid>
-                  <Typography>
-                    Title:
-                    {' '}
-                    {toDo.title}
-                  </Typography>
-                  <Typography>
-                    Text:
-                    {' '}
-                    {toDo.text}
-                  </Typography>
-                </Paper>
-              </Box>
-            </Typography>
+                  <Box sx={{ display: 'flex', gap: '1rem' }}>
+                    <Typography variant="h5" component="span">Title:</Typography>
+                    <Typography variant="h5" component="span">{toDo.title}</Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', gap: '1rem' }}>
+                    <Typography variant="h5" component="span">Text:</Typography>
+                    <Typography variant="h5" component="span">{toDo.text}</Typography>
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
           </Paper>
         </Paper>
       </Box>
