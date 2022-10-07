@@ -155,6 +155,7 @@ function ToDos() {
                           size="small"
                           color="primary"
                           title="Play"
+                          sx={{ width: '100%' }}
                           onClick={() => handlePlay(todo.title, todo.text)}
                         >
                           <PlayCircle />
@@ -164,6 +165,7 @@ function ToDos() {
                             variant="outlined"
                             size="small"
                             title="Show"
+                            sx={{ width: '100%' }}
                           >
                             <Visibility />
                           </Button>
@@ -174,6 +176,7 @@ function ToDos() {
                             size="small"
                             color="warning"
                             title="Edit"
+                            sx={{ width: '100%' }}
                           >
                             <Edit />
                           </Button>
@@ -183,6 +186,7 @@ function ToDos() {
                           size="small"
                           color="error"
                           title="Remove"
+                          sx={{ width: '100%' }}
                           onClick={() => setOpenDialog(true)}
                         >
                           <DeleteOutline />
