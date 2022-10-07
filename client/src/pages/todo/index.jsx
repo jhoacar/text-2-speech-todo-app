@@ -4,6 +4,7 @@ import {
   DeleteOutline,
   Edit,
   ListOutlined,
+  PlayCircle,
   Visibility,
 } from '@mui/icons-material';
 import {
@@ -33,6 +34,7 @@ function ToDos() {
   const [todos, setTodos] = useState([]);
   const [reload, setReload] = useState(0);
   const [openDialog, setOpenDialog] = useState(false);
+  const speaker = new SpeechSynthesisUtterance();
 
   useEffect(() => {
     getToDos()
@@ -51,6 +53,11 @@ function ToDos() {
       }).finally(() => {
         setOpenDialog(false);
       });
+  };
+
+  const handlePlay = (title, text) => {
+    speaker.text = `Title: ${title}. Text: ${text}`;
+    window.speechSynthesis.speak(speaker);
   };
 
   return (
@@ -129,14 +136,24 @@ function ToDos() {
                   {todos?.map((todo) => (
                     <ListItem
                       key={todo?.title}
-                      sx={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}
+                      sx={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit,minmax(10rem, 1fr))' }}
                     >
                       <Typography variant="h6" textTransform="capitalize">
                         {todo.title}
                       </Typography>
-                      <ButtonGroup sx={{ gap: '.5rem' }}>
+                      <Box sx={{ display: 'flex', gap: '.5rem' }}>
+                        <Button
+                          variant="outlined"
+                          size="small"
+                          color="primary"
+                          title="Play"
+                          onClick={() => handlePlay(todo.title, todo.text)}
+                        >
+                          <PlayCircle />
+                        </Button>
                         <Link to={`/todos/show/${todo._id}`}>
                           <Button
+                            variant="outlined"
                             size="small"
                             title="Show"
                           >
@@ -145,6 +162,7 @@ function ToDos() {
                         </Link>
                         <Link to={`/todos/edit/${todo._id}`}>
                           <Button
+                            variant="outlined"
                             size="small"
                             color="warning"
                             title="Edit"
@@ -153,11 +171,11 @@ function ToDos() {
                           </Button>
                         </Link>
                         <Button
+                          variant="outlined"
                           size="small"
                           color="error"
                           title="Remove"
                           onClick={() => setOpenDialog(true)}
-
                         >
                           <DeleteOutline />
                         </Button>
@@ -190,7 +208,7 @@ function ToDos() {
                             </Button>
                           </DialogActions>
                         </Dialog>
-                      </ButtonGroup>
+                      </Box>
                     </ListItem>
                   ))}
                 </List>
