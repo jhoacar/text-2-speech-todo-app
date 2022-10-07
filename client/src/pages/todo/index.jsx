@@ -34,7 +34,11 @@ function ToDos() {
   const [todos, setTodos] = useState([]);
   const [reload, setReload] = useState(0);
   const [openDialog, setOpenDialog] = useState(false);
-  const speaker = new SpeechSynthesisUtterance();
+
+  let speaker = null;
+  if (typeof SpeechSynthesisUtterance !== 'undefined') {
+    speaker = new SpeechSynthesisUtterance();
+  }
 
   useEffect(() => {
     getToDos()
@@ -56,8 +60,10 @@ function ToDos() {
   };
 
   const handlePlay = (title, text) => {
-    speaker.text = `Title: ${title}. Text: ${text}`;
-    window?.speechSynthesis.speak(speaker);
+    if (speaker) {
+      speaker.text = `Title: ${title}. Text: ${text}`;
+      window?.speechSynthesis.speak(speaker);
+    }
   };
 
   return (
