@@ -57,7 +57,7 @@ function ToDos() {
 
   const handlePlay = (title, text) => {
     speaker.text = `Title: ${title}. Text: ${text}`;
-    window.speechSynthesis.speak(speaker);
+    window?.speechSynthesis.speak(speaker);
   };
 
   return (
