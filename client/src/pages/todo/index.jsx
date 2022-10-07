@@ -38,6 +38,8 @@ function ToDos() {
   let speaker = null;
   if (typeof SpeechSynthesisUtterance !== 'undefined') {
     speaker = new SpeechSynthesisUtterance();
+    speaker.rate = 0.7;
+    speaker.lang = 'es-ES';
   }
 
   useEffect(() => {
