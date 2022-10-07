@@ -5,7 +5,9 @@ const connection = require('./boot/database');
 
 const { port } = require('./config/server');
 
-app.listen(port, () => {
+function handleStart() {
+  console.log(this.address());
   console.log(`Server listening on http://localhost:${port}`);
   connection();
-});
+}
+app.listen(port, handleStart);

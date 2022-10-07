@@ -63,7 +63,7 @@ function ToDos() {
 
   const handlePlay = (title, text) => {
     if (speaker) {
-      speaker.text = `Title: ${title}. Text: ${text}`;
+      speaker.text = `${title}: ${text}`;
       window?.speechSynthesis.speak(speaker);
     }
   };
@@ -149,7 +149,7 @@ function ToDos() {
                       <Typography variant="h6" textTransform="capitalize">
                         {todo.title}
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: '.5rem' }}>
+                      <Box sx={{ display: 'grid', gap: '.5rem', gridTemplateColumns: 'repeat(auto-fit,minmax(4rem, 1fr))' }}>
                         <Button
                           variant="outlined"
                           size="small"

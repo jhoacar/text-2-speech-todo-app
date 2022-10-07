@@ -86,11 +86,11 @@ function NavBar() {
           {
             isLoggedIn && (
               <>
-                <Link to="/todos">
+                {/* <Link to="/todos">
                   <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }}>
                     ToDo&apos;s
                   </Button>
-                </Link>
+                </Link> */}
                 <Button variant="outlined" sx={{ color: 'white', fontSize: '.7rem' }} onClick={handleLogout}>
                   Logout
                 </Button>
